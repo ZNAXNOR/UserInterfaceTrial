@@ -1,36 +1,48 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - UserInterfaceTrial</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/UserInterfaceTrial.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
-</head>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - UserInterfaceTrial</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/UserInterfaceTrial.styles.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+    </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">UserInterfaceTrial</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <!-- Top Navbar -->
+    <header class="border-b border-gray-300 py-4 px-4">
+        <div class="container mx-auto flex items-center justify-between relative">
+            <img src="../Images/Design/TopNavbar-left.svg" alt="" width="88" class="absolute -left-24 -top-4 mr-12">
+
+            <a href="#home">
+                <img src="..\Images/Logo/logo.svg" alt="logo" width="291">
+            </a>
+
+            <img src="../Images/Design/TopNavbar-right.svg" alt="" width="88" class="absolute -right-24 -top-4 ml-12">
+
+            <nav>
+                <ul class="flex items-center">
+                    <li>
+                        <a href="#signUp"
+                           class="px-4 py-2 me-1 transition rounded-md font-medium border-t-2
+                                    bg-gradient-to-br border-indigo-400 from-purple-500 to-indigo-600 text-white
+                                    hover:from-green-600 hover:via-blue-500 hover:to-purple-600
+                                    flex md:inline-flex text-lg cursor-pointer hover:shadow-lg"> <img src="../Images/Button/freeSignup.svg" alt="SignUp" class="me-1"> Free SignUp </a>
+                    </li>
+                    <li>
+                        <a href="#signIn"
+                           class="px-4 py-2 border-2 border-transparent text-lg
+                                    transition hover:bg-gray-200 hover:border-gray-300
+                                    rounded-md font-medium"> Sign In </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -42,9 +54,11 @@
             &copy; 2024 - UserInterfaceTrial - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

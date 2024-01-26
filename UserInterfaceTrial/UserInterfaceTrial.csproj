@@ -5,14 +5,28 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
+
+    <ItemGroup>
+      <None Include="wwwroot\Images\Button\freeSignup.svg" />
+      <None Include="wwwroot\Images\Design\TopNavbar-left.svg" />
+      <None Include="wwwroot\Images\Design\TopNavbar-right.svg" />
+      <None Include="wwwroot\Images\Logo\logo.svg" />
+    </ItemGroup>
 	
 	<ItemGroup>
-        <UpToDateCheckBuilt Include="wwwroot/css/site.css" Set="Css" />
-        <UpToDateCheckBuilt Include="tailwind.config.js" Set="Css" />
+		<UpToDateCheckBuilt Include="wwwroot/css/site.css" Set="Css" />
+		<UpToDateCheckBuilt Include="postcss.config.js" Set="Css" />
+		<UpToDateCheckBuilt Include="tailwind.config.js" Set="Css" />
     </ItemGroup>
+	
+	<ItemGroup>
+	  <PackageReference Include="Svg.Custom" Version="1.0.0.10" />
+	  <PackageReference Include="Tailwind.Extensions.AspNetCore" Version="1.0.0" />
+	  <PackageReference Include="TailwindCssTagHelpers" Version="0.5.0" />
+	</ItemGroup>
 
     <Target Name="Tailwind" BeforeTargets="Build">
-        <Exec Command="npm run css:build"/>
+        <Exec Command="npm run css:build" />
     </Target>
 
 </Project>
